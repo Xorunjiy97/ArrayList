@@ -91,6 +91,6 @@ aList.init([1, 5, 9]);
 //console.log(aList.cusUnShift(15));
 //console.log(aList.cusToString());
 //console.log(aList.cusReverse());
-console.log(aList.cusSlice(1,2));
-module.exports = ArrayList;
+//console.log(aList.cusSlice(1,2));
+//module.exports = ArrayList;
 

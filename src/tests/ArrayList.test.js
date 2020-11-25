@@ -6,21 +6,21 @@ describe("ArrayList methods", () => {
   describe("init",() => {
     const aList = new ArrayList();
     const testData = [
-    {
-      initialArray: [1, 2, 3],
-      expectedSize: 3,
-      expectedString: "[1, 2, 3]"
-    },
-    {
-        initialArray: [1, 2, 3, 4],
-        expectedSize: 4,
-        expectedString: "[1, 2, 3, 4]"
-    },
-      {
-        initialArray: [1, 2, 3, 4, 5],
-        expectedSize: 5,
-        expectedString: "[1, 2, 3, 4, 5]"
-      }
+        {
+            initialArray: [1, 2, 3],
+            expectedSize: 3,
+            expectedString: "[1, 2, 3]"
+        },
+        {
+            initialArray: [1, 2, 3, 4],
+            expectedSize: 4,
+            expectedString: "[1, 2, 3, 4]"
+        },
+        {
+            initialArray: [1, 2, 3, 4, 5],
+            expectedSize: 5,
+            expectedString: "[1, 2, 3, 4, 5]"
+        }
     ];
 
     testData.forEach(({initialArray, expectedSize, expectedString}) => {
@@ -33,35 +33,35 @@ describe("ArrayList methods", () => {
     });
   });
   describe("push",() => {
-      const aList = new ArrayList();
-      const testData = [
+    const aList = new ArrayList();
+    const testData = [
         {
-        arg: 10,
-        initialArray: [1, 2, 3],
-        expectedSize: 4,
-        expectedString: "[1, 2, 3, 10]"
-      },
-        {
-          arg:10,
-          initialArray: [1, 2, 3, 4, 10],
-          expectedSize: 6,
-          expectedString: "[1, 2, 3, 4, 10, 10]"
+            arg: 10,
+            initialArray: [1, 2, 3],
+            expectedSize: 4,
+            expectedString: "[1, 2, 3, 10]"
         },
-        {  arg:10,
-          initialArray: [1, 2, 3, 4, 5, 10, 10],
-          expectedSize: 8,
-          expectedString: "[1, 2, 3, 4, 5, 10, 10, 10]"
+        {
+            arg:10,
+            initialArray: [1, 2, 3, 4, 10],
+            expectedSize: 6,
+            expectedString: "[1, 2, 3, 4, 10, 10]"
+        },
+        {   arg:10,
+            initialArray: [1, 2, 3, 4, 5, 10, 10],
+            expectedSize: 8,
+            expectedString: "[1, 2, 3, 4, 5, 10, 10, 10]"
         }
-      ];
+    ];
 
-      testData.forEach(({arg, initialArray, expectedSize, expectedString}) => {
+    testData.forEach(({arg, initialArray, expectedSize, expectedString}) => {
         it("should return size ${expectedSize} and ${expectedString}", () => {
-          aList.init(initialArray)
+            aList.init(initialArray)
 
-          assert.deepEqual(aList.cusPush(arg), expectedSize);
-          assert.deepEqual(aList.cusToString(), expectedString);
+            assert.deepEqual(aList.cusPush(arg), expectedSize);
+            assert.deepEqual(aList.cusToString(), expectedString);
         });
-      });
+    });
   });
   describe("cusUnShift",() => {
     const aList = new ArrayList();
