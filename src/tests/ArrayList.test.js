@@ -6,16 +6,16 @@ describe("ArrayList methods", () => {
   describe("init",() => {
     const aList = new ArrayList();
     const testData = [
-      {
+    {
       initialArray: [1, 2, 3],
       expectedSize: 3,
       expectedString: "[1, 2, 3]"
     },
-      {
+    {
         initialArray: [1, 2, 3, 4],
         expectedSize: 4,
         expectedString: "[1, 2, 3, 4]"
-      },
+    },
       {
         initialArray: [1, 2, 3, 4, 5],
         expectedSize: 5,
@@ -86,12 +86,12 @@ describe("ArrayList methods", () => {
     ];
 
     testData.forEach(({arg, initialArray, expectedSize, expectedString}) => {
-    it("should return size ${expectedSize} and ${expectedString}", () => {
-      aList.init(initialArray)
+        it("should return size ${expectedSize} and ${expectedString}", () => {
+            aList.init(initialArray)
 
-      assert.deepEqual(aList.cusUnShift(arg), expectedSize);
-      assert.deepEqual(aList.cusToString(), expectedString);
-    });
+            assert.deepEqual(aList.cusUnShift(arg), expectedSize);
+            assert.deepEqual(aList.cusToString(), expectedString);
+        });
     });
   });
   describe("cusShift",() => {
@@ -115,45 +115,45 @@ describe("ArrayList methods", () => {
       ];
 
       testData.forEach(({arg, initialArray, returnElement, expectedString}) => {
-      it("should return size ${returnElement} and ${expectedString}", () => {
-        aList.init(initialArray)
+        it("should return size ${returnElement} and ${expectedString}", () => {
+            aList.init(initialArray)
 
-        assert.deepEqual(aList.cusShift(), returnElement);
-        assert.deepEqual(aList.cusToString(), expectedString);
-      });
+            assert.deepEqual(aList.cusShift(), returnElement);
+            assert.deepEqual(aList.cusToString(), expectedString);
+        });
       });
     });
     describe("cusPop",() => {
         const aList = new ArrayList();
-          const testData = [
-              {
+            const testData = [
+                {
                   initialArray: [1, 2, 3, 4],
                   returnElement: 4,
                   expectedString: "[1, 2, 3]",
-              },
-              {
+                },
+                {
                   initialArray: [1, 2, 3],
                   returnElement: 3,
                   expectedString: "[1, 2]",
-              },
-              {
+                },
+                {
                   initialArray: [1, 2],
                   returnElement: 2,
                   expectedString: "[1]",
-              }
-          ];
+                }
+            ];
 
-          testData.forEach(({arg, initialArray, returnElement, expectedString}) => {
-          it("should return size ${returnElement} and ${expectedString}", () => {
-            aList.init(initialArray)
+        testData.forEach(({arg, initialArray, returnElement, expectedString}) => {
+            it("should return size ${returnElement} and ${expectedString}", () => {
+                aList.init(initialArray)
 
-            assert.deepEqual(aList.cusPop(), returnElement);
-            assert.deepEqual(aList.cusToString(), expectedString);
-          });
-          });
+                assert.deepEqual(aList.cusPop(), returnElement);
+                assert.deepEqual(aList.cusToString(), expectedString);
+            });
         });
+    });
         describe("cusClear",() => {
-                const aList = new ArrayList();
+            const aList = new ArrayList();
                   const testData = [
                       {
                           initialArray: [1, 2, 3, 4],
@@ -180,63 +180,62 @@ describe("ArrayList methods", () => {
                     assert.deepEqual(aList.getSize(), expectedSize);
                     assert.deepEqual(aList.cusToString(), expectedString);
                   });
-                  });
-                });
+            });
+        });
     describe("cusReverse",() => {
         const aList = new ArrayList();
-          const testData = [
-            {
+            const testData = [
+                {
                   initialArray: [1, 2, 3, 4],
                   returnElement: [4, 3, 2, 1],
-            },
-              {
+                },
+                {
                   initialArray: [1, 2, 3],
                   returnElement: [3, 2, 1],
-              },
-              {
+                },
+                {
                   initialArray: [1, 2],
                   returnElement: [2, 1],
-              }
-          ];
+                }
+            ];
 
-          testData.forEach(({arg, initialArray, returnElement, expectedString}) => {
-          it("should return size ${returnElement} and ${expectedString}", () => {
-            aList.init(initialArray)
-
-            assert.deepEqual(aList.cusReverse(), returnElement);
-          });
-          });
-        });
-        describe("cusSlice",() => {
-                const aList = new ArrayList();
-                  const testData = [
-                      {   arg: 0,
-                          arg2: 2,
-                          initialArray: [1, 2, 3],
-                          expectedSize: [1, 2],
-                        },
-                        {
-                          arg: 2,
-                          arg2: 4,
-                          initialArray: [1, 2, 3, 4],
-                          expectedSize: [3, 4],
-                        },
-                        {
-                          arg: 1,
-                          arg2: 4,
-                          initialArray: [1, 2, 3, 4, 5],
-                          expectedSize: [2, 3, 4],
-                        }
-                  ];
-
-                  testData.forEach(({arg, arg2, initialArray, expectedSize, expectedString}) => {
-                  it("should return size ${initialArray} and ${expectedString}", () => {
+            testData.forEach(({arg, initialArray, returnElement, expectedString}) => {
+                it("should return size ${returnElement} and ${expectedString}", () => {
                     aList.init(initialArray)
 
-                    assert.deepEqual(aList.cusSlice(arg,arg2), expectedSize);
-//                    assert.deepEqual(aList.cusToString(), expectedString);
-                  });
-                  });
+            assert.deepEqual(aList.cusReverse(), returnElement);
                 });
+            });
+    });
+    describe("cusSlice",() => {
+        const aList = new ArrayList();
+          const testData = [
+            {arg: 0,
+             arg2: 2,
+             initialArray: [1, 2, 3],
+             expectedSize: [1, 2],
+            },
+             {
+              arg: 2,
+              arg2: 4,
+              initialArray: [1, 2, 3, 4],
+              expectedSize: [3, 4],
+             },
+             {
+              arg: 1,
+              arg2: 4,
+              initialArray: [1, 2, 3, 4, 5],
+              expectedSize: [2, 3, 4],
+             }
+          ];
+
+          testData.forEach(({arg, arg2, initialArray, expectedSize, expectedString}) => {
+              it("should return size ${initialArray} and ${expectedString}", () => {
+                aList.init(initialArray)
+
+                assert.deepEqual(aList.cusSlice(arg,arg2), expectedSize);
+              });
+          });
+    });
 })
 
